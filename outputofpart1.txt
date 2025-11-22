@@ -1,0 +1,294 @@
+ print("Yasser Ashraf Gaber                        22010409")
+[1] "Yasser Ashraf Gaber                        22010409"
+> #use readxl//install.packages("readxl")
+> library(readxl)
+> #import the excel file to a data frame.
+> fruit_prices<-read_excel("D:\\1.A.Semester3\\Intro_to_data_science\\project\\Fruit Prices 2020 .xlsx")
+> #print the data frame,using print method with n paramater to read all rows in the file.
+> print(fruit_prices,n=63)
+# A tibble: 62 × 8
+   Fruit                                    Form   RetailPrice RetailPriceUnit Yield CupEquivalentSize CupEquivalentUnit CupEquivalentPrice
+   <chr>                                    <chr>        <dbl> <chr>           <dbl>             <dbl> <chr>                          <dbl>
+ 1 Apples                                   Fresh        1.52  per pound        0.9              0.242 pounds                         0.409
+ 2 Apples, applesauce                       Canned       1.07  per pound        1                0.540 pounds                         0.576
+ 3 Apples, ready-to-drink                   Juice        0.780 per pint         1                8     fluid ounces                   0.390
+ 4 Apples, frozen concentrate               Juice        0.585 per pint         1                8     fluid ounces                   0.293
+ 5 Apricots                                 Fresh        2.97  per pound        0.93             0.364 pounds                         1.16 
+ 6 Apricots, packed in juice                Canned       1.69  per pound        1                0.540 pounds                         0.913
+ 7 Apricots, packed in syrup or water       Canned       2.06  per pound        0.65             0.441 pounds                         1.40 
+ 8 Apricots                                 Dried        6.62  per pound        1                0.143 pounds                         0.948
+ 9 Bananas                                  Fresh        0.525 per pound        0.64             0.331 pounds                         0.271
+10 Berries, mixed                           Frozen       3.56  per pound        1                0.331 pounds                         1.18 
+11 Blackberries                             Fresh        6.02  per pound        0.96             0.320 pounds                         2.00 
+12 Blackberries                             Frozen       3.64  per pound        1                0.331 pounds                         1.20 
+13 Blueberries                              Fresh        4.17  per pound        0.95             0.320 pounds                         1.40 
+14 Blueberries                              Frozen       3.39  per pound        1                0.331 pounds                         1.12 
+15 Cantaloupe                               Fresh        0.577 per pound        0.51             0.375 pounds                         0.424
+16 Cherries                                 Fresh        3.43  per pound        0.92             0.342 pounds                         1.27 
+17 Cherries, packed in syrup or water       Canned       4.53  per pound        0.65             0.441 pounds                         3.07 
+18 Clementines                              Fresh        1.38  per pound        0.77             0.463 pounds                         0.833
+19 Cranberries                              Dried        4.65  per pound        1                0.123 pounds                         0.573
+20 Dates                                    Dried        5.57  per pound        1                0.165 pounds                         0.921
+21 Figs                                     Dried        6.84  per pound        0.96             0.165 pounds                         1.18 
+22 Fruit cocktail, packed in juice          Canned       1.72  per pound        1                0.540 pounds                         0.929
+23 Fruit cocktail, packed in syrup or water Canned       1.59  per pound        0.65             0.441 pounds                         1.08 
+24 Grapefruit                               Fresh        1.17  per pound        0.49             0.463 pounds                         1.10 
+25 Grapefruit, ready-to-drink               Juice        1.04  per pint         1                8     fluid ounces                   0.521
+26 Grapes                                   Fresh        1.84  per pound        0.96             0.331 pounds                         0.634
+27 Grapes (raisins)                         Dried        3.78  per pound        1                0.165 pounds                         0.625
+28 Grapes, ready-to-drink                   Juice        0.922 per pint         1                8     fluid ounces                   0.461
+29 Grapes, frozen concentrate               Juice        0.712 per pint         1                8     fluid ounces                   0.356
+30 Honeydew                                 Fresh        0.906 per pound        0.46             0.375 pounds                         0.738
+31 Kiwi                                     Fresh        2.18  per pound        0.76             0.386 pounds                         1.11 
+32 Mangoes                                  Fresh        1.15  per pound        0.71             0.364 pounds                         0.590
+33 Mangoes                                  Dried       10.6   per pound        1                0.125 pounds                         1.32 
+34 Nectarines                               Fresh        1.91  per pound        0.91             0.320 pounds                         0.670
+35 Oranges                                  Fresh        1.21  per pound        0.68             0.408 pounds                         0.728
+36 Oranges, ready-to-drink                  Juice        0.984 per pint         1                8     fluid ounces                   0.492
+37 Oranges, frozen concentrate              Juice        0.769 per pint         1                8     fluid ounces                   0.384
+38 Papaya                                   Fresh        1.29  per pound        0.62             0.309 pounds                         0.642
+39 Papaya                                   Dried        5.51  per pound        1                0.154 pounds                         0.850
+40 Peaches                                  Fresh        1.72  per pound        0.96             0.342 pounds                         0.611
+41 Peaches, packed in juice                 Canned       2.02  per pound        1                0.540 pounds                         1.09 
+42 Peaches, packed in syrup or water        Canned       1.81  per pound        0.65             0.441 pounds                         1.23 
+43 Peaches                                  Frozen       3.39  per pound        1                0.331 pounds                         1.12 
+44 Pears                                    Fresh        1.59  per pound        0.9              0.364 pounds                         0.641
+45 Pears, packed in juice                   Canned       1.95  per pound        1                0.540 pounds                         1.06 
+46 Pears, packed in syrup or water          Canned       1.90  per pound        0.65             0.441 pounds                         1.29 
+47 Pineapple                                Fresh        0.568 per pound        0.51             0.364 pounds                         0.406
+48 Pineapple, packed in juice               Canned       1.43  per pound        1                0.540 pounds                         0.775
+49 Pineapple, packed in syrup or water      Canned       1.41  per pound        0.65             0.441 pounds                         0.954
+50 Pineapple                                Dried        6.65  per pound        1                0.154 pounds                         1.03 
+51 Pineapple, ready-to-drink                Juice        1.03  per pint         1                8     fluid ounces                   0.514
+52 Pineapple, frozen concentrate            Juice        0.697 per pint         1                8     fluid ounces                   0.349
+53 Plum                                     Fresh        2.03  per pound        0.94             0.364 pounds                         0.785
+54 Plum (prunes)                            Dried        5.70  per pound        1                0.187 pounds                         1.07 
+55 Plum (prune), ready-to-drink             Juice        1.55  per pint         1                8     fluid ounces                   0.776
+56 Pomegranate                              Fresh        2.24  per pound        0.56             0.342 pounds                         1.36 
+57 Pomegranate, ready-to-drink              Juice        3.12  per pint         1                8     fluid ounces                   1.56 
+58 Raspberries                              Fresh        6.64  per pound        0.96             0.320 pounds                         2.21 
+59 Raspberries                              Frozen       4.19  per pound        1                0.331 pounds                         1.38 
+60 Strawberries                             Fresh        2.58  per pound        0.94             0.320 pounds                         0.877
+61 Strawberries                             Frozen       2.82  per pound        1                0.331 pounds                         0.932
+62 Watermelon                               Fresh        0.360 per pound        0.52             0.331 pounds                         0.229
+> 
+> 
+> #Data Cleaning
+>   #1-duplicated rows are in your data
+>   if(sum(duplicated(fruit_prices))==0){
++     paste("No Dublicated Values ",sum(duplicated(fruit_prices)))
++   }else{
++     paste("Number of duplicated rows :",sum(duplicated(fruit_prices)))
++   }
+[1] "No Dublicated Values  0"
+> 
+>   #2-which rows have duplicated values
+>   duplicated(fruit_prices)
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[24] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[47] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+>   
+>   #3-Select only all distinct rows//install.packages("dplyr")
+>   library(dplyr)
+>   print(distinct(fruit_prices),n=63)
+# A tibble: 62 × 8
+   Fruit                                    Form   RetailPrice RetailPriceUnit Yield CupEquivalentSize CupEquivalentUnit CupEquivalentPrice
+   <chr>                                    <chr>        <dbl> <chr>           <dbl>             <dbl> <chr>                          <dbl>
+ 1 Apples                                   Fresh        1.52  per pound        0.9              0.242 pounds                         0.409
+ 2 Apples, applesauce                       Canned       1.07  per pound        1                0.540 pounds                         0.576
+ 3 Apples, ready-to-drink                   Juice        0.780 per pint         1                8     fluid ounces                   0.390
+ 4 Apples, frozen concentrate               Juice        0.585 per pint         1                8     fluid ounces                   0.293
+ 5 Apricots                                 Fresh        2.97  per pound        0.93             0.364 pounds                         1.16 
+ 6 Apricots, packed in juice                Canned       1.69  per pound        1                0.540 pounds                         0.913
+ 7 Apricots, packed in syrup or water       Canned       2.06  per pound        0.65             0.441 pounds                         1.40 
+ 8 Apricots                                 Dried        6.62  per pound        1                0.143 pounds                         0.948
+ 9 Bananas                                  Fresh        0.525 per pound        0.64             0.331 pounds                         0.271
+10 Berries, mixed                           Frozen       3.56  per pound        1                0.331 pounds                         1.18 
+11 Blackberries                             Fresh        6.02  per pound        0.96             0.320 pounds                         2.00 
+12 Blackberries                             Frozen       3.64  per pound        1                0.331 pounds                         1.20 
+13 Blueberries                              Fresh        4.17  per pound        0.95             0.320 pounds                         1.40 
+14 Blueberries                              Frozen       3.39  per pound        1                0.331 pounds                         1.12 
+15 Cantaloupe                               Fresh        0.577 per pound        0.51             0.375 pounds                         0.424
+16 Cherries                                 Fresh        3.43  per pound        0.92             0.342 pounds                         1.27 
+17 Cherries, packed in syrup or water       Canned       4.53  per pound        0.65             0.441 pounds                         3.07 
+18 Clementines                              Fresh        1.38  per pound        0.77             0.463 pounds                         0.833
+19 Cranberries                              Dried        4.65  per pound        1                0.123 pounds                         0.573
+20 Dates                                    Dried        5.57  per pound        1                0.165 pounds                         0.921
+21 Figs                                     Dried        6.84  per pound        0.96             0.165 pounds                         1.18 
+22 Fruit cocktail, packed in juice          Canned       1.72  per pound        1                0.540 pounds                         0.929
+23 Fruit cocktail, packed in syrup or water Canned       1.59  per pound        0.65             0.441 pounds                         1.08 
+24 Grapefruit                               Fresh        1.17  per pound        0.49             0.463 pounds                         1.10 
+25 Grapefruit, ready-to-drink               Juice        1.04  per pint         1                8     fluid ounces                   0.521
+26 Grapes                                   Fresh        1.84  per pound        0.96             0.331 pounds                         0.634
+27 Grapes (raisins)                         Dried        3.78  per pound        1                0.165 pounds                         0.625
+28 Grapes, ready-to-drink                   Juice        0.922 per pint         1                8     fluid ounces                   0.461
+29 Grapes, frozen concentrate               Juice        0.712 per pint         1                8     fluid ounces                   0.356
+30 Honeydew                                 Fresh        0.906 per pound        0.46             0.375 pounds                         0.738
+31 Kiwi                                     Fresh        2.18  per pound        0.76             0.386 pounds                         1.11 
+32 Mangoes                                  Fresh        1.15  per pound        0.71             0.364 pounds                         0.590
+33 Mangoes                                  Dried       10.6   per pound        1                0.125 pounds                         1.32 
+34 Nectarines                               Fresh        1.91  per pound        0.91             0.320 pounds                         0.670
+35 Oranges                                  Fresh        1.21  per pound        0.68             0.408 pounds                         0.728
+36 Oranges, ready-to-drink                  Juice        0.984 per pint         1                8     fluid ounces                   0.492
+37 Oranges, frozen concentrate              Juice        0.769 per pint         1                8     fluid ounces                   0.384
+38 Papaya                                   Fresh        1.29  per pound        0.62             0.309 pounds                         0.642
+39 Papaya                                   Dried        5.51  per pound        1                0.154 pounds                         0.850
+40 Peaches                                  Fresh        1.72  per pound        0.96             0.342 pounds                         0.611
+41 Peaches, packed in juice                 Canned       2.02  per pound        1                0.540 pounds                         1.09 
+42 Peaches, packed in syrup or water        Canned       1.81  per pound        0.65             0.441 pounds                         1.23 
+43 Peaches                                  Frozen       3.39  per pound        1                0.331 pounds                         1.12 
+44 Pears                                    Fresh        1.59  per pound        0.9              0.364 pounds                         0.641
+45 Pears, packed in juice                   Canned       1.95  per pound        1                0.540 pounds                         1.06 
+46 Pears, packed in syrup or water          Canned       1.90  per pound        0.65             0.441 pounds                         1.29 
+47 Pineapple                                Fresh        0.568 per pound        0.51             0.364 pounds                         0.406
+48 Pineapple, packed in juice               Canned       1.43  per pound        1                0.540 pounds                         0.775
+49 Pineapple, packed in syrup or water      Canned       1.41  per pound        0.65             0.441 pounds                         0.954
+50 Pineapple                                Dried        6.65  per pound        1                0.154 pounds                         1.03 
+51 Pineapple, ready-to-drink                Juice        1.03  per pint         1                8     fluid ounces                   0.514
+52 Pineapple, frozen concentrate            Juice        0.697 per pint         1                8     fluid ounces                   0.349
+53 Plum                                     Fresh        2.03  per pound        0.94             0.364 pounds                         0.785
+54 Plum (prunes)                            Dried        5.70  per pound        1                0.187 pounds                         1.07 
+55 Plum (prune), ready-to-drink             Juice        1.55  per pint         1                8     fluid ounces                   0.776
+56 Pomegranate                              Fresh        2.24  per pound        0.56             0.342 pounds                         1.36 
+57 Pomegranate, ready-to-drink              Juice        3.12  per pint         1                8     fluid ounces                   1.56 
+58 Raspberries                              Fresh        6.64  per pound        0.96             0.320 pounds                         2.21 
+59 Raspberries                              Frozen       4.19  per pound        1                0.331 pounds                         1.38 
+60 Strawberries                             Fresh        2.58  per pound        0.94             0.320 pounds                         0.877
+61 Strawberries                             Frozen       2.82  per pound        1                0.331 pounds                         0.932
+62 Watermelon                               Fresh        0.360 per pound        0.52             0.331 pounds                         0.229
+>   #4-sum of NA values
+>   if(sum(is.na(fruit_prices)==0)){
++     paste("There aren't NA Values",sum(is.na(fruit_prices)))
++   }else{
++     paste("Number of NA values :",sum(is.na(fruit_prices)))
++   }
+[1] "There aren't NA Values 0"
+>   
+> #unsupervised technique -> k-means
+>   #retailprice and CupEquivalentPrice columns
+>   fruit_prices_k<-fruit_prices[,c(3,8)]
+>   print(fruit_prices_k,n=63)
+# A tibble: 62 × 2
+   RetailPrice CupEquivalentPrice
+         <dbl>              <dbl>
+ 1       1.52               0.409
+ 2       1.07               0.576
+ 3       0.780              0.390
+ 4       0.585              0.293
+ 5       2.97               1.16 
+ 6       1.69               0.913
+ 7       2.06               1.40 
+ 8       6.62               0.948
+ 9       0.525              0.271
+10       3.56               1.18 
+11       6.02               2.00 
+12       3.64               1.20 
+13       4.17               1.40 
+14       3.39               1.12 
+15       0.577              0.424
+16       3.43               1.27 
+17       4.53               3.07 
+18       1.38               0.833
+19       4.65               0.573
+20       5.57               0.921
+21       6.84               1.18 
+22       1.72               0.929
+23       1.59               1.08 
+24       1.17               1.10 
+25       1.04               0.521
+26       1.84               0.634
+27       3.78               0.625
+28       0.922              0.461
+29       0.712              0.356
+30       0.906              0.738
+31       2.18               1.11 
+32       1.15               0.590
+33      10.6                1.32 
+34       1.91               0.670
+35       1.21               0.728
+36       0.984              0.492
+37       0.769              0.384
+38       1.29               0.642
+39       5.51               0.850
+40       1.72               0.611
+41       2.02               1.09 
+42       1.81               1.23 
+43       3.39               1.12 
+44       1.59               0.641
+45       1.95               1.06 
+46       1.90               1.29 
+47       0.568              0.406
+48       1.43               0.775
+49       1.41               0.954
+50       6.65               1.03 
+51       1.03               0.514
+52       0.697              0.349
+53       2.03               0.785
+54       5.70               1.07 
+55       1.55               0.776
+56       2.24               1.36 
+57       3.12               1.56 
+58       6.64               2.21 
+59       4.19               1.38 
+60       2.58               0.877
+61       2.82               0.932
+62       0.360              0.229
+>   Kmean_clustering_fruits<-kmeans(fruit_prices_k,centers = 2)
+>   Kmean_clustering_fruits
+K-means clustering with 2 clusters of sizes 43, 19
+
+Cluster means:
+  RetailPrice CupEquivalentPrice
+1    1.473949          0.7568512
+2    5.200805          1.2883842
+
+Clustering vector:
+ [1] 1 1 1 1 1 1 1 2 1 2 2 2 2 2 1 2 2 1 2 2 2 1 1 1 1 1 2 1 1 1 1 1 2 1 1 1 1 1 2 1 1 1 2 1 1 1 1 1 1 2 1 1 1 2 1 1 1 2 2 1 1 1
+
+Within cluster sum of squares by cluster:
+[1] 24.39022 64.52968
+ (between_SS / total_SS =  67.7 %)
+
+Available components:
+
+[1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss" "betweenss"    "size"         "iter"         "ifault"      
+>   
+> #Supervised learning technique ->Decision Tree
+>   #columns from 1 to 10
+>   fruit_prices_tree<-fruit_prices[1:10,]
+>   fruit_prices_tree
+# A tibble: 10 × 8
+   Fruit                              Form   RetailPrice RetailPriceUnit Yield CupEquivalentSize CupEquivalentUnit CupEquivalentPrice
+   <chr>                              <chr>        <dbl> <chr>           <dbl>             <dbl> <chr>                          <dbl>
+ 1 Apples                             Fresh        1.52  per pound        0.9              0.242 pounds                         0.409
+ 2 Apples, applesauce                 Canned       1.07  per pound        1                0.540 pounds                         0.576
+ 3 Apples, ready-to-drink             Juice        0.780 per pint         1                8     fluid ounces                   0.390
+ 4 Apples, frozen concentrate         Juice        0.585 per pint         1                8     fluid ounces                   0.293
+ 5 Apricots                           Fresh        2.97  per pound        0.93             0.364 pounds                         1.16 
+ 6 Apricots, packed in juice          Canned       1.69  per pound        1                0.540 pounds                         0.913
+ 7 Apricots, packed in syrup or water Canned       2.06  per pound        0.65             0.441 pounds                         1.40 
+ 8 Apricots                           Dried        6.62  per pound        1                0.143 pounds                         0.948
+ 9 Bananas                            Fresh        0.525 per pound        0.64             0.331 pounds                         0.271
+10 Berries, mixed                     Frozen       3.56  per pound        1                0.331 pounds                         1.18 
+>   #use rpart 
+>   library(rpart)
+>   tree<-rpart(Form ~ Fruit + Yield + RetailPriceUnit, 
++               data =fruit_prices_tree , minsplit=2)
+>   tree
+n= 10 
+
+node), split, n, loss, yval, (yprob)
+      * denotes terminal node
+
+ 1) root 10 7 Canned (0.3 0.1 0.3 0.1 0.2)  
+   2) Fruit=Apples, applesauce,Apricots, packed in juice,Apricots, packed in syrup or water 3 0 Canned (1 0 0 0 0) *
+   3) Fruit=Apples,Apples, frozen concentrate,Apples, ready-to-drink,Apricots,Bananas,Berries, mixed 7 4 Fresh (0 0.14 0.43 0.14 0.29)  
+     6) Yield< 0.965 3 0 Fresh (0 0 1 0 0) *
+     7) Yield>=0.965 4 2 Juice (0 0.25 0 0.25 0.5)  
+      14) Fruit=Apricots,Berries, mixed 2 1 Dried (0 0.5 0 0.5 0)  
+        28) Fruit=Apricots 1 0 Dried (0 1 0 0 0) *
+        29) Fruit=Berries, mixed 1 0 Frozen (0 0 0 1 0) *
+      15) Fruit=Apples, frozen concentrate,Apples, ready-to-drink 2 0 Juice (0 0 0 0 1) *
+>   library(rpart.plot)
+>   rpart.plot(tree1)
+> 

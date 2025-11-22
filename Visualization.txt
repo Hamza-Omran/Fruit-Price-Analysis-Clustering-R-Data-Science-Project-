@@ -1,0 +1,105 @@
+#use readxl//install.packages("readxl")
+library(readxl)
+#import the excel file to a data frame.
+fruit_prices<-read_excel("D:\\VIF\\Materials\\2nd year 1st term\\Intro To Data Science\\project\\Fruit Prices 2020.xlsx")
+#print the data frame,using print method with n paramater to read all rows in the file.
+print(fruit_prices,n=63)
+
+#install.packages("dplyr")
+
+#Data Cleaning
+#1-duplicated rows are in your data
+if(sum(duplicated(fruit_prices))==0){
+  paste("No Dublicated Values ",sum(duplicated(fruit_prices)))
+}else{
+  paste("Number of duplicated rows :",sum(duplicated(fruit_prices)))
+}
+
+#2-which rows have duplicated values
+duplicated(fruit_prices)
+
+#3-Select only all distinct rows//install.packages("dplyr")
+library(dplyr)
+print(distinct(fruit_prices),n=63)
+#4-sum of NA values
+if(sum(is.na(fruit_prices)==0)){
+  paste("There aren't NA Values",sum(is.na(fruit_prices)))
+}else{
+  paste("Number of NA values :",sum(is.na(fruit_prices)))
+}
+
+#unsupervised technique -> k-means
+#retailprice and CupEquivalentPrice columns
+fruit_prices_k<-fruit_prices[,c(3,8)]
+print(fruit_prices_k,n=63)
+Kmean_clustering_fruits<-kmeans(fruit_prices_k,centers = 2)
+Kmean_clustering_fruits
+
+#Supervised learning technique ->Decision Tree
+#columns from 1 to 10
+fruit_prices_tree<-fruit_prices[1:10,]
+fruit_prices_tree
+#use rpart 
+library(rpart)
+tree<-rpart(Form ~ Fruit + Yield + RetailPriceUnit, 
+            data =fruit_prices_tree , minsplit=2)
+tree
+library(rpart.plot)
+rpart.plot(tree)
+
+
+###########################################################             Hamza             ################################################################
+
+#
+boxplot(x = fruit_prices$RetailPrice, 
+        xlab = "Fruits",
+        main = "Compare Fruits Prices")
+
+
+barplot(height = fruit_prices$CupEquivalentPrice, 
+        names.arg = fruit_prices$Fruit,
+        xlab = "Fruits",
+        ylab = "Cup Price",
+        col = "cyan",
+        main = "Compare Fruits Cup Prices")
+
+
+barplot(height = fruit_prices$CupEquivalentSize, 
+        names.arg = fruit_prices$Fruit,
+        xlab = "Fruits",
+        ylab = "Cup Size",
+        col = "orange",
+        main = "Compare Fruits Cup Sizes")
+
+plot(x=fruit_prices$RetailPrice,y=fruit_prices$Yield,xlab = "Price",ylab="Yeild",main="Price Vs Yeild",col=("red"))
+
+
+form_counts <- table(fruit_prices$Form)
+
+# Define a custom color palette
+custom_colors <- c("cyan", "#3477eb", "#34eb77", "orange","#e05404")
+
+# Create a pie chart with custom colors
+pie(form_counts, labels = names(form_counts), col = custom_colors,
+    main = "Form Distribution of Fruits", cex.main = 1.2)
+
+
+# assuming fruit_prices is your dataframe and assuming Form is the column indicating the form of each fruit
+# and RetailPrice is the column indicating retail prices
+
+# calculate average retail price for each form
+average_prices <- tapply(fruit_prices$RetailPrice, fruit_prices$Form, mean)
+
+# define blue and green colors
+bar_colors <- c("lightblue", "skyblue", "darkcyan", "lightgreen", "mediumseagreen")
+
+
+
+
+# create  bar plot
+barplot(average_prices, col = bar_colors,
+        main = "Average Retail Prices by Form",
+        xlab = "Form", ylab = "Average Retail Price",
+        border = "black", ylim = c(0, max(average_prices) + 0.5))
+
+
