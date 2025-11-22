@@ -160,7 +160,3 @@ This analysis reveals important patterns in fruit pricing and market distributio
 ## License
 
 This project was developed as part of the Introduction to Data Science course.
-
-## Contact
-
-For questions or collaboration, please contact team members through their university IDs.
